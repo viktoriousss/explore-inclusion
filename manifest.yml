@@ -1,0 +1,13 @@
+---
+applications:
+- name: explore-inclusion
+  path: .
+  memory: 1G
+  random-route: true
+  instances: 3
+  path: target/emoji-inclusion-1.0.o.jar
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'    
+    JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ } }'
+  routes:
+    - route: inclusion.apps.viktoriouslab.nl
